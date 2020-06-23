@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testKornienko</title>
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <form method="post" action="">
+        <div>
+            <label>Имя:
+                <input required type="text" name="name" id="name" placeholder="Иванов Иван Иванович">
+                <span class="warning" id="warningName">Не прошел валидацию!</span>
+            </label>
+        </div>
+        <div>
+            <label>Email:
+                <input required type="email" name="email" id="email" placeholder="mail@gmail.com">
+                <span class="warning" id="warningEmail">Не прошел валидацию!</span>
+            </label>
+        </div>
+        <div>
+            <label>Номер телефона:
+                <input required type="number" name="phone_number" placeholder="+79001234567" id="phone">
+                <span class="warning" id="warningPhone">Не прошел валидацию!</span>
+            </label>
+        </div>
+        <div>
+            <button type="submit">Отправить</button>
+        </div>
+    </form>
+</div>
+<script src="scripts/validator.js"></script>
+</body>
+</html>
