@@ -36,20 +36,32 @@ input{
 
 .warning {
     visibility: hidden;
-    width: 160px;
+    /*width: 160px;*/
     background-color: #555;
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 8px 0;
+    padding: 8px;
     position: absolute;
     z-index: 1;
-    bottom: -10%;
-    left: 113%;
-    margin-left: -80px;
+    bottom: -140%;
+    /*left: 113%;*/
+    margin: 0 10px;
 }
 .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
+}
+.warningNameShow {
+
+
+}
+.warningEmailShow {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    bottom: 30%;
+    left: 113%;
+    margin-left: -80px;
 }
