@@ -93,24 +93,32 @@ function validatorNameEnd() {
             warning.classList.add('show');
         }
     });
+    // console.log('массив из букв', arrayName);
     if ((name.match(/ +/g)) && (name.match(/ +/g).length === 2) && (validingName) && (result) && (name)) {
 
         name = '';
         // D Dsgsd Sgdg
         //gkhFDGJdfgFgsd SDFrfgSDdDFdf DDfrfFgfGff
         for (let i = 0; i < arrayName.length; i++)  {
-            for (let j = 0; j < arrayName[i].length; j++) {
-                // console.log('житая буква', arrayName[i][j]);
-                if (j === 0) {
-                    name = name + arrayName[i][j].toUpperCase();
-                    // console.log('житая буква toUpperCase', name);
-                } else {
-                    name = name + arrayName[i][j].toLowerCase();
-                    // console.log('житая буква toLowerCase', name);
+            if (arrayName[i].length > 0) {
+                for (let j = 0; j < arrayName[i].length; j++) {
+                    // console.log('житая буква', arrayName[i][j]);
+
+                    // console.log('arrayName[i].length > 0', arrayName[i].length);
+                    if (j === 0) {
+                        name = name + arrayName[i][j].toUpperCase();
+                        // console.log('житая буква toUpperCase', name);
+                    } else {
+                        name = name + arrayName[i][j].toLowerCase();
+                        // console.log('житая буква toLowerCase', name);
+                    }
+
+
                 }
+                name = name + ' ';
             }
             // console.log('итое слово', arrayName[i]);
-            name = name + ' ';
+
         }
         // console.log('обработанная строка', name);
         name = name.trim();
