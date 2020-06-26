@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="container">
-    <form method="post" action="">
+    <form method="post" action="" name="myForm">
         <div>
             <label>Имя:
                 <input required type="text" name="name" id="name" placeholder="Иванов Иван Иванович">
@@ -16,18 +16,18 @@
         </div>
         <div>
             <label>Email:
-                <input required type="email" name="email" id="email" placeholder="mail@gmail.com">
-                <span class="warning" id="warningEmail">Не прошел валидацию!</span>
+                <input required type="text" name="email" id="email" placeholder="mail@gmail.com">
+                <span class="warning" id="warningEmail">E-mail должен состоять из латинских букв, цифр и знаков "-", "_", ".", которые не идут подряд, начинаться и заканчиваться буквой или цифрой и принадлежать домену @gmail.com</span>
             </label>
         </div>
         <div>
             <label>Номер телефона:
-                <input required type="number" name="phone_number" placeholder="+79001234567" id="phone">
-                <span class="warning" id="warningPhone">Не прошел валидацию!</span>
+                <input required type="text" name="phone_number" placeholder="+79001234567" id="phone">
+                <span class="warning" id="warningPhone">Номер телефона может состоять только из цифр, пробелов, знаков "+ - ( )", и быть формата +7ХХХХХХХХХХ. Начинаться может с +7, 07 или с 8</span>
             </label>
         </div>
         <div>
-            <button type="submit">Отправить</button>
+            <button type="submit" id="submit" onclick="btnSubmit(event)">Отправить</button>
         </div>
     </form>
 </div>

@@ -36,7 +36,7 @@ input{
 
 .warning {
     visibility: hidden;
-    /*width: 160px;*/
+    width: 100%;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -44,8 +44,8 @@ input{
     padding: 8px;
     position: absolute;
     z-index: 1;
-    bottom: -140%;
-    /*left: 113%;*/
+    top: 110%;
+    left: -3%;
     margin: 0 10px;
 }
 .show {
@@ -56,12 +56,4 @@ input{
 .warningNameShow {
 
 
-}
-.warningEmailShow {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-    bottom: 30%;
-    left: 113%;
-    margin-left: -80px;
 }
