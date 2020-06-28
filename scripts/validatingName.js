@@ -10,17 +10,14 @@ export const validatingName = {
     validingNameOnchange: false, // флаг что после ухода из поля все проверки успешны
 
     validatorName: function () {
-        console.log('click');
         // запоминаем вводимое значение
         this.name = elementsHTML.inputName.value;
-        console.log(this.name);
         let spaceArray = this.name.match(/ +/g); //массив, содержащий элементы-пробелы из вводимой строки
         let arrCodeChar = [];
         let str = this.name.split('');
         str.forEach(function (sign) {
             arrCodeChar.push(sign.charCodeAt(0));
         });
-        console.log('arrCodeChar: ', arrCodeChar);
         // если вводится запрещенный символ, то пишется false
         this.onlyAllowedCharacters = !arrCodeChar.some(function (el) {
             return ((el < 1040) || (el > 1103)) && ((el < 65) || (el > 90)) && ((el < 97) || (el > 122)) && (el !== 32);
@@ -35,7 +32,6 @@ export const validatingName = {
             this.validingNameOninput = true;
             elementsHTML.warningName.classList.remove('show');
         }
-        console.log('spaceNameCounter = ', this.spaceNameCounter);
         // счетчик сгруппированных пробелов, с исключением если они в начале или в конце
         if (spaceArray !== null) {
             this.spaceNameCounter = spaceArray.length;
@@ -63,9 +59,7 @@ export const validatingName = {
     },
 
     validatorNameEnd: function () {
-        // console.log('Name после ухода', name.length);
         this.name = this.name.trim();
-        // console.log('Name после обрезки пробела в конце', name.length);
 
         // приверка на то чтобы не ввели инициалы
         let arrayName = this.name.split(' ');
@@ -75,7 +69,6 @@ export const validatingName = {
                 elementsHTML.warningName.classList.add('show');
             }
         });
-        // console.log('массив из букв', arrayName);
         //если при вводе нет ошибок и введено три слова
         if ((this.name.match(/ +/g)) && (this.name.match(/ +/g).length === 2) && (this.validingNameOninput) && (this.onlyAllowedCharacters)) {
             // делаем их с заглавной буквы
@@ -93,10 +86,8 @@ export const validatingName = {
                 }
             }
             this.name = this.name.trim();
-            // console.log('NAME IS VALIDING');
             this.validingNameOnchange = true;
         } else {
-            // console.log('NAME IS GOVNO');
             elementsHTML.warningName.classList.add('show');
             this.validingNameOnchange = false;
         }

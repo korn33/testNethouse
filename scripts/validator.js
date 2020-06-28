@@ -71,7 +71,7 @@ async function btnSubmit(event) {
 
         console.log('начата отправка данных формы');
 
-        await fetch('http://ptsv2.com/t/8o6lb-1593340314/post', {
+        await fetch('https://ptsv2.com/t/8o6lb-1593340314/post', {
             method: 'POST',
             body: formData
         }).then(response => {
